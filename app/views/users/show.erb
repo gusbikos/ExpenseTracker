@@ -1,0 +1,20 @@
+<%# DASHBOARD %>
+<h1><%= @user.username %>'s Dashboard!</h1> 
+
+<h2>Email: <%= @user.email%></h2>
+
+<% @transactions.each do |t|%>
+   <p> Bank: <%=link_to  t.bank_account.name, bank_account_path(t) %></p><br/>
+<%end %>
+
+<% @transactions.each do |t|%>
+   <p> Income: <%=link_to  t.income.name, income_path(t) %></p><br/>
+<%end %>
+
+<% @transactions.each do |t|%>
+   <p> Expense: <%=link_to  t.expense.name, expense_path(t) %></p><br/>
+<%end %>
+
+<% @transactions.each do |t|%>
+   <p> Portfolio: <%=link_to  t.portfolio.amount, portfolio_path(t) %></p><br/>
+<%end %>

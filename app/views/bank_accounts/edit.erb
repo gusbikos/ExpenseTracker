@@ -1,0 +1,11 @@
+<%= form_for @bank_account do |f| %>
+    <p> <%= f.label :name %> </p> 
+    <p> <%= f.text_field :name %> </p>
+    <p> <%= f.label :account_number %> </p> 
+    <p> <%= f.text_field :account_number %> </p>
+    <p> <%= f.label :routing_number %> </p> 
+    <p> <%= f.text_field :routing_number %> </p>
+    <p> <%= f.submit %> </p>
+<% end %>
+
+<%=button_to "Delete Account", @bank_account, method: :delete %>

@@ -1,0 +1,15 @@
+hello is this thing on
+
+<%= form_for @transaction do |f| %>
+    <%=f.label :user_id %>
+    <%=f.collection_select :user_id, @users, :id, :username %>
+    <%=f.label :expense_id%>
+    <%=f.collection_select :expense_id, @expenses, :id, :name %>
+    <%=f.label :income_id%>
+    <%=f.collection_select :income_id, @incomes, :id, :name %>
+    <%=f.label :bank_account_id%>
+    <%=f.collection_select :bank_account_id, @bank_accounts, :id, :name %>
+    <%=f.label :portfolio %>
+    <%=f.collection_select :portfolio_id, @portfolios, :id, :amount %>
+    <%=f.submit %>
+<%end%>
