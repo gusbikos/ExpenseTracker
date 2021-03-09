@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :stocks do
+    collection do
+      get :search
+    end
+  end
+
   get "/login", to: "users#login", as: "login"
   post "/handle_login", to: 'users#handle_login'
-  
   delete "/logout", to: "users#logout"
   
   resources :transactions

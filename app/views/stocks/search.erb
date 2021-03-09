@@ -1,0 +1,13 @@
+<h2>Search for Stock</h2>
+
+<%= form_with url: search_stocks_path, method: "get", local: true do %>
+  <%= label_tag :Enter_Stock, "Enter Stock name:" %>
+  <%= text_field_tag :stock %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @response %>
+  <div>
+    <%= @response.body %>
+  </div>
+<% end %>
