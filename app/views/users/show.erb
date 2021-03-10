@@ -22,13 +22,13 @@
       <p> Expense: <%=link_to  t.expense.name, expense_path(t) %></p><br/>
    <%end%>
 <%end %>
-
 <% @transactions.each do |t|%>
-   <%if t.portfolio == nil || t.portfolio == '' %>
+   <%if t.stock == nil || t.stock == ''%>
    <%else%>
-   
+      <p> Stock: <%=link_to  t.stock.symbol, stock_path(t) %></p><br/>
    <%end%>
 <%end %>
+
 
 
 <%= link_to "new stock", search_stocks_path %>

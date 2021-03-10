@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_033201) do
+ActiveRecord::Schema.define(version: 2021_03_09_223018) do
 
   create_table "bank_accounts", force: :cascade do |t|
     t.string "name"
@@ -36,21 +36,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_033201) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "portfolio_stocks", force: :cascade do |t|
-    t.integer "portfolio_id", null: false
-    t.integer "stock_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["portfolio_id"], name: "index_portfolio_stocks_on_portfolio_id"
-    t.index ["stock_id"], name: "index_portfolio_stocks_on_stock_id"
-  end
-
-  create_table "portfolios", force: :cascade do |t|
-    t.float "amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "stocks", force: :cascade do |t|
     t.string "from"
     t.string "symbol"
@@ -66,12 +51,14 @@ ActiveRecord::Schema.define(version: 2021_03_10_033201) do
     t.integer "expense_id"
     t.integer "income_id"
     t.integer "portfolio_id"
+    t.integer "stock_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bank_account_id"], name: "index_transactions_on_bank_account_id"
     t.index ["expense_id"], name: "index_transactions_on_expense_id"
     t.index ["income_id"], name: "index_transactions_on_income_id"
     t.index ["portfolio_id"], name: "index_transactions_on_portfolio_id"
+    t.index ["stock_id"], name: "index_transactions_on_stock_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
@@ -83,6 +70,4 @@ ActiveRecord::Schema.define(version: 2021_03_10_033201) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "portfolio_stocks", "portfolios"
-  add_foreign_key "portfolio_stocks", "stocks"
 end

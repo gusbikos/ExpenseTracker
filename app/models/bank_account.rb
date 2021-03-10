@@ -3,5 +3,5 @@ class BankAccount < ApplicationRecord
     has_many :users, through: :transactions
     has_many :incomes, through: :transactions
     has_many :expenses, through: :transactions
-    has_many :portfolios, through: :transactions
+    has_many :stocks, through: :transactions
 end

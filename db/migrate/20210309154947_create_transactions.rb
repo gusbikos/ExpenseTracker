@@ -6,7 +6,8 @@ class CreateTransactions < ActiveRecord::Migration[6.1]
       t.belongs_to :expense
       t.belongs_to :income
       t.belongs_to :portfolio
-
+      t.belongs_to :stock
+      
       t.timestamps
     end
   end

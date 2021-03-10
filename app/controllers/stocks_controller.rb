@@ -17,14 +17,13 @@ class StocksController < ApplicationController
             result = JSON.parse(response.body)
 
             # creates a stock 
-            byebug
-            stock = @user.stocks.create!(
+            stock = @user.stocks.create(
                 from: result["from"],
                 symbol: result["symbol"],
                 close: result["close"],
                 share: shares.to_i,
             )
-            
+
             if stock.save
                 # redirect if successful
                 redirect_to user_path(@user)

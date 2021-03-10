@@ -14,7 +14,7 @@ class TransactionsController < ApplicationController
         @expenses = Expense.all
         @bank_accounts = BankAccount.all
         @users = User.all
-        @portfolios = Portfolio.all
+        @stocks = Stock.all
     end 
 
     def create 

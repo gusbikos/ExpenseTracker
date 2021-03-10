@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :portfolio_stocks
  
   resources :stocks do
     collection do
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "users#logout"
   
   resources :transactions
-  resources :portfolios
   resources :expenses
   resources :incomes
   resources :bank_accounts
