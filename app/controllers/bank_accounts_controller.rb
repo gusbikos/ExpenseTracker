@@ -10,13 +10,16 @@ class BankAccountsController < ApplicationController
 
     def new
         @bank_account = BankAccount.new 
-        @users = User.all 
+        @expenses = Expense.all
+        @portfolios = Portfolio.all    
     end 
 
     def create 
-        @bank_account = BankAccount.create(bank_account_params)
-        #@user = User.find_by(params[:id])        
-        redirect_to bank_account_path(@bank_account)
+        if session[:user_id]
+            @bank_account = @current_user.bank_accounts.create(bank_account_params)
+        end
+        
+        redirect_to user_path(@current_user)
     end 
 
     def edit 
@@ -24,7 +27,6 @@ class BankAccountsController < ApplicationController
     end 
 
     def update 
-        #@bank_account = BankAccount.find(params[:id])
         @bank_account = BankAccount.update(bank_account_params)
         redirect_to bank_account_path(@bank_account)
     end 

@@ -15,9 +15,8 @@ class IncomesController < ApplicationController
     end 
     
     def create 
-        @income = Income.create(income_params)
-        @user = User.find_by(params[:id]) 
-        redirect_to income_path(@income)
+        @income = @current_user.incomes.create(income_params)
+        redirect_to user_path(@current_user)
     end 
 
     def edit 

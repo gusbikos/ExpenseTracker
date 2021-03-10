@@ -13,8 +13,8 @@ class ExpensesController < ApplicationController
     end 
 
     def create 
-        @expense = Expense.create(expense_params)
-        redirect_to expense_path(@expense)
+        @expense = @current_user.expenses.create(expense_params)
+        redirect_to user_path(@current_user)
     end 
 
     def edit 

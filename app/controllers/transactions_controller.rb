@@ -19,10 +19,8 @@ class TransactionsController < ApplicationController
 
     def create 
         
-        @transaction = Transaction.create(transaction_params)
-        #@transaction = Transaction.find_by(params[:id])
-        #@user = User.find_by(params[:id])        
-        redirect_to user_path(@transaction.user_id)
+        @transaction = @current_user.create(transaction_params)
+        redirect_to user_path(@current_user)
     end 
 
     def edit 

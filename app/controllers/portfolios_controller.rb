@@ -13,9 +13,8 @@ class PortfoliosController < ApplicationController
     end 
     
     def create 
-        @portfolio = Portfolio.create(portfolio_params)
-        @user = User.find_by(params[:id]) 
-        redirect_to user_path(@user)
+        @portfolio = @current_user.portfolios.create(portfolio_params)
+        redirect_to user_path(@current_user)
     end 
 
     def edit 

@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(version: 2021_03_10_033201) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "bank_account_id", null: false
-    t.integer "expense_id", null: false
-    t.integer "income_id", null: false
-    t.integer "portfolio_id", null: false
+    t.integer "user_id"
+    t.integer "bank_account_id"
+    t.integer "expense_id"
+    t.integer "income_id"
+    t.integer "portfolio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["bank_account_id"], name: "index_transactions_on_bank_account_id"
@@ -85,9 +85,4 @@ ActiveRecord::Schema.define(version: 2021_03_10_033201) do
 
   add_foreign_key "portfolio_stocks", "portfolios"
   add_foreign_key "portfolio_stocks", "stocks"
-  add_foreign_key "transactions", "bank_accounts"
-  add_foreign_key "transactions", "expenses"
-  add_foreign_key "transactions", "incomes"
-  add_foreign_key "transactions", "portfolios"
-  add_foreign_key "transactions", "users"
 end

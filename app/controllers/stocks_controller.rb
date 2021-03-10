@@ -2,13 +2,9 @@ require 'json'
 
 class StocksController < ApplicationController
 
-    def index
-
-    end
-
     def search
         # stores the current_user
-        @user = User.find_by(params[:id])
+        @user =  User.find_by(id: session[:user_id]) #User.find_by(params[:id])
 
         # continues if conditions are true
         if params['stock'] && params['shares']
@@ -21,7 +17,8 @@ class StocksController < ApplicationController
             result = JSON.parse(response.body)
 
             # creates a stock 
-            stock = Stock.create(
+            byebug
+            stock = @user.stocks.create!(
                 from: result["from"],
                 symbol: result["symbol"],
                 close: result["close"],
