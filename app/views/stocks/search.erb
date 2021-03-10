@@ -1,13 +1,13 @@
 <h2>Search for Stock</h2>
 
+<% if flash[:error]%>
+    <%= flash[:error] %>
+<%end%>
+
 <%= form_with url: search_stocks_path, method: "get", local: true do %>
   <%= label_tag :Enter_Stock, "Enter Stock name:" %>
   <%= text_field_tag :stock %>
+  <%= label_tag :Enter_shares, "Enter Shares:" %>
+  <%= text_field_tag :shares %>
   <%= submit_tag "Search" %>
-<% end %>
-
-<% if @response %>
-  <div>
-    <%= @response.body %>
-  </div>
 <% end %>

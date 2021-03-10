@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
-  belongs_to :user
-  belongs_to :bank_account
-  belongs_to :expense
-  belongs_to :income
-  belongs_to :portfolio
+  belongs_to :user, dependent: :destroy
+  belongs_to :bank_account, dependent: :destroy
+  belongs_to :expense, dependent: :destroy
+  belongs_to :income, dependent: :destroy
+  belongs_to :portfolio, dependent: :destroy
 end

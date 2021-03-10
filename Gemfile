@@ -24,7 +24,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # http request
 gem 'faraday'
-
+# rack
+gem 'rack-attack'
+# json
+gem 'json', '~> 2.5', '>= 2.5.1'
 # env
 gem 'dotenv-rails', groups: [:development, :test]
 # Use Active Storage variant

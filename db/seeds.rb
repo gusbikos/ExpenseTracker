@@ -7,5 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 gus = User.create!(username: "Gus", email: "gus@gmail", password: "123")
-
-# https://api.polygon.io/v1/open-close/AAPL/2020-10-14?unadjusted=true&apiKey=b1tSySnAfOnJ9_jAU0oBw2Q5XC7QaP4L
