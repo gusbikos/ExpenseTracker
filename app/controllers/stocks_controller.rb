@@ -21,16 +21,13 @@ class StocksController < ApplicationController
             result = JSON.parse(response.body)
 
             # creates a stock 
-            # throwing an error
-            stock = Stock.new
-            stock.assign_attributes(
+            stock = Stock.create(
                 from: result["from"],
                 symbol: result["symbol"],
                 close: result["close"],
                 share: shares.to_i,
-                portfolio_id: @user.id
             )
-            stock.save
+            
             if stock.save
                 # redirect if successful
                 redirect_to user_path(@user)

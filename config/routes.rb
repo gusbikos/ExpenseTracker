@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :portfolio_stocks
+ 
   resources :stocks do
     collection do
       get :search

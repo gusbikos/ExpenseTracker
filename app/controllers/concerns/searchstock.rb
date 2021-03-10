@@ -9,3 +9,12 @@ module Searchstock
     end
 end
   
+# url => https://yelp-com.p.rapidapi.com/
+  # api => search/nearby/
+
+
+# 37.788719679657554/-122.40057774847898?radius=5&term=Restaurants&offset=0
+  # #{location} / #{location} / #{different_Rs} / ${5} / #{off} / #{0}
+# https://yelp-com.p.rapidapi.com/business/
+
+  #  a-Lf60V3BDdS27la95VQWA/related
