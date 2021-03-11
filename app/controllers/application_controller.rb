@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
  
          # Any instance variable saved carries on through after a before_action
      before_action :authorized
-     
+
      def current_user
          # Find the AR instance associated with the ID in session
          @current_user ||= User.find_by(id: session[:user_id])

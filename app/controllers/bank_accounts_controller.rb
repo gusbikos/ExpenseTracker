@@ -10,8 +10,7 @@ class BankAccountsController < ApplicationController
 
     def new
         @bank_account = BankAccount.new 
-        @expenses = Expense.all
-        @portfolios = Portfolio.all    
+        @expenses = Expense.all   
     end 
 
     def create 

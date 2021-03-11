@@ -1,38 +1,69 @@
 <%# DASHBOARD %>
-<h1><%= @user.username %>'s Dashboard!</h1> 
+<div class='main-wrapper'>
+  
+   <%= render 'shared/navbar'%>
 
-<h2>Email: <%= @user.email%></h2>
+   <div id='dashboard-wrapper'>
+      <div id='container-dash'>
+         <div class='dashboard-head'>
+            <h2>Dashboard</h2> 
+            <div class='username-container'>
+               <div class='username-picture'>
+               </div>
+               <div>
+                  <h3><%= @user.username %></h3>
+                  <p>Owner</p>
+               </div>
+            </div>
+         </div>
 
-<% @transactions.each do |t|%>
-   <%if t.bank_account == nil || t.bank_account == '' %>
-   <%else%>
-      <p> Bank: <%=link_to  t.bank_account.name, bank_account_path(t) %></p><br/>
-   <%end%>
-<%end %>
-<% @transactions.each do |t|%>
-   <%if t.income == nil || t.income == '' %>
-   <%else%>
-      <p> Income: <%=link_to  t.income.name, income_path(t) %></p><br/>
-   <%end%>
-<%end %>
+         <div class='dashboard-main'>
+            <div class='dashboard-main-left'>
+               <div class='top-row'>
+                  <div>
+                     <h4>Balance</h4>
+                  </div>
+               
+                  <div>
+                     <h4>Investment</h4>
+                     <% @transactions.each do |t|%>
+                        <%if t.income == nil || t.income == '' %>
+                           income
+                        <%else%>
+                           <p> Income: <%=link_to  t.income.name, income_path(t) %></p><br/>
+                        <%end%>
+                     <%end %>
+                  </div>
+               </div>
 
-<% @transactions.each do |t|%>
-   <%if t.expense == nil || t.expense == ''%>
-   <%else%>
-      <p> Expense: <%=link_to  t.expense.name, expense_path(t) %></p><br/>
-   <%end%>
-<%end %>
-<% @transactions.each do |t|%>
-   <%if t.stock == nil || t.stock == ''%>
-   <%else%>
-      <p> Stock: <%=link_to  t.stock.symbol, stock_path(t) %></p><br/>
-   <%end%>
-<%end %>
+               <div class='dashboard-main-left-row'>
+                  <h4>Expense</h4>
+                  <% @transactions.each do |t|%>
+                     <%if t.expense == nil || t.expense == ''%>
+                        expense
+                     <%else%>
+                        <p> Expense: <%=link_to  t.expense.name, expense_path(t) %></p><br/>
+                     <%end%>
+                  <%end %>
+               </div>
+
+               <div class='dashboard-main-left-row'>
+                   <h4>Income</h4>
+                  <% @transactions.each do |t|%>
+                     <%if t.stock == nil || t.stock == ''%>
+                     <%else%>
+                        <p> Stock: <%=link_to  t.stock.symbol, stock_path(t) %></p><br/>
+                     <%end%>
+                  <%end %>
+               </div>
+            </div>
+            <div class='transaction-row'>
+           <h4>Recent payment</h4> 
+            </div>
+         </div>
+      </div>
+
+   </div>
 
 
-
-<%= link_to "new stock", search_stocks_path %>
-<%= link_to "new Income", new_income_path %>
-<%= link_to "new Expense", new_expense_path %>
-<%= link_to "new bank account", new_bank_account_path %>
-<%= link_to "new transactions", new_transaction_path %>
+</div>

@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    line-height: 1.5;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100vh;
+}
+
+#left-nav-container {
+    background: #1D195B;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 80% 10%;
+    padding: 2em;
+
+
+    ul {
+        padding-left: 0;
+
+        h1 {
+            color: #F4F3F6;
+            font-size: 2em;
+        }
+
+        li {
+            margin-bottom: .5em;
+            border-radius: 5px;
+            padding: .5em;
+
+            &:nth-child(1) {
+
+                background: #262169;
+            }
+
+            a {
+                color: #F4F3F6 !important;
+                margin: 1em;
+            }
+        }
+    }
+
+    .nav-log {
+        .btn-container {
+            width: 100%;
+            border: 2px solid #262169;
+            color: #8e8cac;
+
+            &:hover {
+                background: #262169;
+                color: #fff;
+            }
+        }
+    }
+}
