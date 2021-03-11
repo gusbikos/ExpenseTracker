@@ -1,15 +1,32 @@
-hello
+<div class='main-wrapper'>
+  
+   <%= render 'shared/navbar'%>
 
-  <%= form_for @user do |f| %> 
-    <%= f.label :Username %>
-    <%= f.text_field :username %>
-    <%= f.label :Email %>
-    <%= f.text_field :email %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit %>
-<% end %>
-
-<%=button_to "Delete Account", @user, method: :delete %>
+ <div id='dashboard-wrapper'>
+    <div id='container-dash'>
+      <section id='form-container'>
+            <%= form_for @user do |f| %> 
+            <h1>Update</h1>
+            <section class='mb-3'>
+              <%= f.label :Username, class:  "form-label" %>
+              <%= f.text_field :username, class: "form-control" %>
+            </section>
+              <%= f.label :Email, class:  "form-label" %>
+              <%= f.text_field :email, class: "form-control" %>
+            <section class='mb-3'>
+              <%= f.label :password, class:  "form-label" %>
+              <%= f.password_field :password , class: "form-control"%>
+            </section>
+            <section class='mb-3'>
+              <%= f.label :password_confirmation, class:  "form-label" %>
+              <%= f.password_field :password_confirmation, class: "form-control" %>
+            </section>
+            <section class='button-container'>
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+              <%=button_to "Delete Account", @user, method: :delete, class: 'btn btn-danger' %>
+            </section>
+          <% end %>
+      </section>
+  </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ class IncomesController < ApplicationController
 
     def new 
         @income = Income.new
-        @users = User.all
+        @user = session[:user_id]
     end 
     
     def create 

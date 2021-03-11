@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :stocks do
     collection do
       get :search
+      get :gather
     end
   end
 

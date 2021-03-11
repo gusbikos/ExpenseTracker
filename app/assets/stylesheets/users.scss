@@ -82,7 +82,7 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr;
                 background-color: none !important;
-
+                
                 div {
                     width: 98%;
                     background-color: #fff;
@@ -90,10 +90,31 @@
 
                     &:nth-child(1) {
                         margin-left: -.2em;
+                        section {
+                            margin: 0em .5em;
+                            font-size: 2.5em;
+                            color: #1D195B;
+                        }
                     }
 
                     &:nth-child(2) {
                         margin-right: -2em;
+                        .investment-container {
+                            display: flex;
+                            justify-content: space-around;
+                            width: 100%;
+                            height: 100%;
+
+                            .green-market {
+                                color: #16BA88;
+                                font-size: 1.3em;
+                            }
+
+                            .market-title {
+                                color: rgb(194, 194, 194);
+                                font-size: .7em;
+                            }
+                        }
                     }
                 }
             }

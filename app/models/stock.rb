@@ -4,4 +4,6 @@ class Stock < ApplicationRecord
     has_many :incomes, through: :transactions
     has_many :bank_accounts, through: :transactions
 
+
+        
 end
