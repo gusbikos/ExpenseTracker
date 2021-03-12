@@ -1,0 +1,27 @@
+
+<div class='main-wrapper'>
+  
+   <%= render 'shared/secondnavbar'%>
+
+ <div id='dashboard-wrapper'>
+    <div id='container-dash'>
+      <section id='form-container'>
+            <%= form_with url: search_stocks_path, method: "get", local: true do %> 
+            <h1>Search Stock</h1>
+            <section class='mb-3'>
+               <%= label_tag :Enter_Stock, "Enter Stock name:", class:  "form-label"  %>
+                <%= text_field_tag :stock,"", class: "form-control" %>
+            </section>
+
+            <section class='mb-3'>
+               <%= label_tag :Enter_shares, "Enter Shares:", class:  "form-label" %>
+               <%= text_field_tag :shares, "",class: "form-control"  %>
+            </section>
+            <section class='button-container'>
+              <%= submit_tag "Submit", class: "btn btn-primary" %>
+            </section>
+          <% end %>
+      </section>
+  </div>
+  </div>
+</div>

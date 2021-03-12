@@ -1,0 +1,18 @@
+<section id='form-container'>
+           <%= form_tag "/handle_login" do %> 
+            <h1>Login</h1>
+
+            <section class='mb-3'>
+               <%= label_tag :username, "Enter Username", class:  "form-label" %>
+               <%= text_field_tag :username,"", class: "form-control"  %>
+            </section>
+            <section class='mb-3'>
+                <%= label_tag :password,"Password", class:  "form-label" %>
+                <%= password_field_tag :password, "", class: "form-control"  %>
+            </section>
+            <section class='button-container'>
+              <%= submit_tag "Login" , class: "btn btn-primary"%>
+              <%= link_to  "Signup", new_user_path, class: "btn btn-primary"%>
+            </section>
+          <% end %>
+      </section>

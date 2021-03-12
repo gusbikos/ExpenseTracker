@@ -1,0 +1,105 @@
+<%# DASHBOARD %>
+<div class='main-wrapper'>
+  
+   <%= render 'shared/navbar'%>
+
+   <div id='dashboard-wrapper'>
+      <div id='container-dash'>
+         <div class='dashboard-head'>
+            <h2>Dashboard</h2> 
+            <div class='username-container'>
+               <div class='username-picture'>
+               </div>
+               <div>
+                  <h3><%= @user.username %></h3>
+                  <p>Owner</p>
+               </div>
+            </div>
+         </div>
+
+         <div class='dashboard-main'>
+            <div class='dashboard-main-left'>
+               <div class='top-row'>
+                  <div>
+                     <h4>Balance</h4>
+                     <section>
+                        <sup>$</sup><%= @user.total_balance%>
+                     </section>
+                  </div>
+               
+                  <div>
+                     <h4>
+                        Investment 
+                    
+                     </h4>
+                     <ul class='investment-container'>
+                     <section>
+                        <li class="green-market"><sup>$</sup><%= @user.price_of_stock %></li> 
+                        <li class='market-title'>Market Price</li> 
+                     </section>
+                     <section>
+                        <li class="green-market"><%= @user.total_shares %></li> 
+                        <li class='market-title'>Current Shares</li> 
+                     </section> 
+                     </ul>
+                  </div>
+               </div>
+
+               <div class='dashboard-main-left-row'>
+                  <h4>Expense</h4>
+                  <% @transactions.each do |t|%>
+                     <%if t.expense == nil || t.expense == ''%>
+                     <%else%>
+                        <section class='card'>
+                              <section class='card-body'>
+                                 <section class='card-image'>
+                                 </section>
+                                 <section class='card-description'>
+                                    <h6><%= t.expense.name %></h6>
+                                    <p><%= t.expense.description %></p>
+                                 </section>
+                                 <section class='card-amount'>
+                                    <h6 class='expense'> - <sup>$</sup><%= t.expense.amount %></h6>
+                                    <p>Transfer</p>
+                                 </section>
+                              </section>
+                           </section>
+                        </section>
+                     <%end%>
+                  <%end %>
+               </div>
+
+               <div class='dashboard-main-left-row'>
+                   <h4>Income</h4>
+                  <% @transactions.each do |t|%>
+                     <%if t.income == nil || t.income == ''%>
+                     <%else%>
+                           <section class='card'>
+                              <section class='card-body'>
+                                 <section class='card-image'>
+                                 </section>
+                                 <section class='card-description'>
+                                    <h6><%= t.income.name %></h6>
+                                    <p><%= t.income.description %></p>
+                                 </section>
+                                 <section class='card-amount'>
+                                    <h6 class='income'> + <sup>$</sup><%= t.income.amount %></h6>
+                                    <p>Transfer</p>
+                                 </section>
+                              <section>
+                           </section>
+                        </section>
+                     <%end%>
+                  <%end %>
+               </div>
+            </div>
+            <div class='transaction-row'>
+               <h4>Stock Market</h4> 
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+
+</div>

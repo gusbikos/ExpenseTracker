@@ -1,0 +1,16 @@
+
+<div style='width:100%; text-align:center;'>
+    <%= @transactions.user.username %>
+<div>
+<div class='container'>
+    <% @transaction.user.bank_accounts.each do |t| %>
+        <%= link_to t.name, user_path(t)%>
+    <%end%>
+    <% @transaction.user.incomes.each do |t| %>
+        <%= t.name %>
+    <%end%>
+    <% @transaction.user.expenses.each do |t| %>
+        <%= t.name %>
+    <%end%>
+    
+</div>

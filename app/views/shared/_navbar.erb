@@ -1,0 +1,21 @@
+<div id='left-nav-container'>
+        <ul>
+            <h1>FINTECH</h1>
+        </ul>
+        <ul>
+            <li><%= link_to "Overview", user_path %></li>
+            <li><%= link_to "Settings", edit_user_path %></li>
+            <li><%= link_to "Stock", search_stocks_path %></li>
+            <li><%= link_to "Income", new_income_path %></li>
+            <li><%= link_to "Expense", new_expense_path %></li>
+            <li><%= link_to "Bank Account", new_bank_account_path %></li>
+        </ul>
+        <div class='nav-log'>
+            <% if logged_in? %>
+                <%= button_to "Logout", "/logout", method: "delete", class: 'btn btn-outline-secondary btn-container' %>
+            <% else %>
+                 <p>You are NOT logged in </p>
+            <% end %>
+        </div>
+</div>
+

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyString
+  symbol: MyString
+  close: 1.5
+  share: 1
+  portfolio: one
+
+two:
+  from: MyString
+  symbol: MyString
+  close: 1.5
+  share: 1
+  portfolio: two
