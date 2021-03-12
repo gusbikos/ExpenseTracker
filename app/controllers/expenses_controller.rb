@@ -9,7 +9,8 @@ class ExpensesController < ApplicationController
     end 
 
     def new
-        @expense = Expense.new 
+        @expense = Expense.new
+        @user = session[:user_id] 
     end 
 
     def create 
@@ -19,6 +20,7 @@ class ExpensesController < ApplicationController
 
     def edit 
        @expense = Expense.find(params[:id])
+       @user = session[:user_id] 
     end 
 
     def update 

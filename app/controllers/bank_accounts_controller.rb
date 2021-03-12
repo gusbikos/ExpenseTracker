@@ -10,7 +10,7 @@ class BankAccountsController < ApplicationController
 
     def new
         @bank_account = BankAccount.new 
-        @expenses = Expense.all   
+        @user = session[:user_id] 
     end 
 
     def create 
@@ -23,6 +23,7 @@ class BankAccountsController < ApplicationController
 
     def edit 
        @bank_account = BankAccount.find(params[:id])
+       @user = session[:user_id] 
     end 
 
     def update 

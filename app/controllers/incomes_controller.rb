@@ -21,6 +21,7 @@ class IncomesController < ApplicationController
 
     def edit 
         @income = Income.find(params[:id])
+        @user = session[:user_id]
     end 
 
     def update 
